@@ -1,13 +1,12 @@
 package blog.service;
 
 import blog.model.Post;
-import blog.model.User;
+import blog.model.UserDto;
 import blog.repository.PostRepository;
 import blog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.PostRemove;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -26,9 +25,9 @@ public class PostServiceImpl implements PostService {
          add(new Post(1L, "First Post", "<p>Line #1.</p><p>Line #2</p>", null));
          add(new Post(2L, "Second Post",
                  "Second post content:<ul><li>line 1</li><li>line 2</li></p>",
-                 new User(10L, "pesho10", "Peter Ivanov")));
+                 new UserDto(10L, "pesho10", "Peter Ivanov")));
          add(new Post(3L, "Post #3", "<p>The post number 3 nice</p>",
-                 new User(10L, "merry", null)));
+                 new UserDto(10L, "merry", null)));
          add(new Post(4L, "Forth Post", "<p>Not interesting post</p>", null));
          add(new Post(5L, "Post Number 5", "<p>Just posting</p>", null));
          add(new Post(6L, "Sixth Post", "<p>Another interesting post</p>", null));
@@ -38,9 +37,9 @@ public class PostServiceImpl implements PostService {
         add(new Post(1L, "First Post", "<p>Line #1.</p><p>Line #2</p>", null));
         add(new Post(2L, "Second Post",
                 "Second post content:<ul><li>line 1</li><li>line 2</li></p>",
-                new User(10L, "pesho10", "Peter Ivanov")));
+                new UserDto(10L, "pesho10", "Peter Ivanov")));
         add(new Post(3L, "Post #3", "<p>The post number 3 nice</p>",
-                new User(10L, "merry", null)));
+                new UserDto(10L, "merry", null)));
         add(new Post(4L, "Forth Post", "<p>Not interesting post</p>", null));
         add(new Post(5L, "Post Number 5", "<p>Just posting</p>", null));
         add(new Post(6L, "Sixth Post", "<p>Another interesting post</p>", null));

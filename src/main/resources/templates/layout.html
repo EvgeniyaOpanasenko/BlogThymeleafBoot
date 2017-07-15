@@ -20,7 +20,7 @@
         <a href="posts/create.html" th:href="@{/posts/create}">Create Post</a>
         <a href="users/index.html" th:href="@{/users}">Users</a>
         <div id="logged-in-info">
-            <span>Hello, <b>(user)</b></span>
+            <span>Hello,<b th:inline="text"  class="user"> [[${#httpServletRequest.remoteUser}]] </b></span>
             <form method="post" th:action="@{/users/logout}">
                 <input type="submit" value="Logout"/>
             </form>

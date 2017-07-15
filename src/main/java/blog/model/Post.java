@@ -16,13 +16,13 @@ public class Post implements Serializable {
     private String body;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User author;
+    private UserDto author;
     private Date date = new Date();
 
     public Post() {
     }
 
-    public Post(long id, String title, String body, User author, Date date) {
+    public Post(long id, String title, String body, UserDto author, Date date) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -30,7 +30,7 @@ public class Post implements Serializable {
         this.date = date;
     }
 
-    public Post(long id, String title, String body, User author) {
+    public Post(long id, String title, String body, UserDto author) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -61,11 +61,11 @@ public class Post implements Serializable {
         this.body = body;
     }
 
-    public User getAuthor() {
+    public UserDto getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(UserDto author) {
         this.author = author;
     }
 

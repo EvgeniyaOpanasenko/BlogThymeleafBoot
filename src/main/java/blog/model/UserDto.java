@@ -3,18 +3,17 @@ package blog.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
+public class UserDto implements Serializable {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String username;
+    private String userName;
     private String passwordHash;
     private String fullName;
     private String role;
@@ -22,20 +21,20 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "author")
     private Set<Post> posts = new HashSet<>();
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(long id, String username, String passwordHash, String fullName, Set<Post> posts) {
+    public UserDto(long id, String userName, String passwordHash, String fullName, Set<Post> posts) {
         this.id = id;
-        this.username = username;
+        this.userName = userName;
         this.passwordHash = passwordHash;
         this.fullName = fullName;
         this.posts = posts;
     }
 
-    public User(Long id, String username, String passwordHash) {
+    public UserDto(Long id, String userName, String passwordHash) {
         this.id = id;
-        this.username = username;
+        this.userName = userName;
         this.passwordHash = passwordHash;
     }
 
@@ -47,12 +46,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPasswordHash() {
